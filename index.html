@@ -9,6 +9,17 @@
 <script>
     var input = document.getElementsByTagName('input')[0];
     input.oninput = function (evt) {
-        evt.target.value += '|';
+        evt.target.value = formatDate(evt.target.value);
+    }
+
+    var addSlashRegExp = /^[0-3][0-9](\/[0-1][0-9])?$/;
+
+    function formatDate(value) {
+        value = value.replace(/[^\d/]/g, '');
+
+        if (addSlashRegExp.test(value)) {
+            value += '/';
+        }
+        return value;
     }
 </script>

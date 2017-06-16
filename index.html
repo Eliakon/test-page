@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <input>
+    </body>
+</html>
+
+<script>
+    var input = document.getElementsByTagName('input')[0];
+    input.oninput = function (evt) {
+        evt.target.value += '|';
+    }
+</script>

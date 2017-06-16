@@ -2,13 +2,22 @@
 
 <html>
     <body>
-        <input>
+        <p>Date formatter (current version)</p>
+        <input id="current" placeholder="jj/mm/aaaa">
+
+        <p>Date formatter (fix)</p>
+        <input id="fix" placeholder="jj/mm/aaaa">
     </body>
 </html>
 
 <script>
-    var input = document.getElementsByTagName('input')[0];
-    input.oninput = function (evt) {
+    var currentInput = document.getElementById('current');
+    currentInput.oninput = function (evt) {
+        evt.target.value = formatDate(evt.target.value);
+    }
+
+    var fixInput = document.getElementById('fix');
+    fixInput.oninput = function (evt) {
         window.setTimeout(() => {
             evt.target.value = formatDate(evt.target.value);
         }, 1)
